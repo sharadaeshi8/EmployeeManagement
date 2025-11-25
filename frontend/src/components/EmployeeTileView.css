@@ -1,0 +1,30 @@
+.employee-tile-view {
+  padding: 20px;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .tile-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tile-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (min-width: 1600px) {
+  .tile-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+

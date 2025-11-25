@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f7fa;
+}
+
+.app-header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 8px;
+  background: #f5f5f5;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.view-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.view-button:hover {
+  color: #333;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.view-button.active {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-nav {
+  background: white;
+  position: sticky;
+  top: 70px;
+  z-index: 99;
+}
+
+.app-main {
+  flex: 1;
+  padding: 24px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 16px;
+  color: #666;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: #667eea;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 16px;
+    height: 60px;
+  }
+  
+  .app-title {
+    font-size: 1.2rem;
+  }
+  
+  .view-button span {
+    display: none;
+  }
+  
+  .view-button {
+    padding: 8px;
+  }
+  
+  .app-main {
+    padding: 16px;
+  }
+}
